@@ -1,0 +1,13 @@
+.listblock{
+    width: 80%;
+    height: max-content;
+    min-height: 10rem;
+
+    background-color: #212325;
+    border-radius: 1em;
+    padding: 0 1.5em;
+}
+
+.listblock-header{
+    
+}
