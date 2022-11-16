@@ -3,7 +3,7 @@ import React, {useState} from 'react';
 import ListBlock from '../../components/ListBlock/ListBlock';
 import logo from '../../images/logo.svg'
 /* Open Item - function to open a specific item */
-function ListPage({openItem}) {
+function ListPage({items, openItem}) {
   return (
     <div className="ListPage">
         <div className="listpage-header">
@@ -12,7 +12,7 @@ function ListPage({openItem}) {
         <ListBlock />
         <div className="listpage-footer">
           {/* Temporarely */}
-          <a href="/read" onClick={()=>openItem('template')}>to read</a>
+          <a href="/read" onClick={()=>openItem(0,1,1)}>to read</a>
         </div>
     </div>
   );

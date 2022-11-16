@@ -1,8 +1,12 @@
 import React, {useState} from 'react';
 import './ReadPage.css'
-import '../../storage/'
 
-function ReadPage({openItem}){
-    const targetPath = `../../storage/${}`
+function ReadPage({targetPath, title, volume, chapter}){
+    console.log(targetPath, title, volume, chapter)
+
+    return(
+        <div className="list-pages">
+        </div>
+    )
 }
 export default ReadPage
