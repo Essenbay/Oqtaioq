@@ -16,7 +16,8 @@ switch(window.location.pathname) {
     Page = ListPage; break;
 }
 
-const openItem = (itemId)=>{
+
+const openItem = (itemId, name, volume, chapter)=>{
   console.log(`Reading ${itemId}`)
 }
 
