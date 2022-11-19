@@ -1,18 +1,27 @@
 import './ReadBlock.css';
 import React, {useState} from 'react';
-function readEmpty(){
-    return(
-        <div className="read-empty">
+import image from '../../storage/template/volume1/chapter1/1.png'
+function ReadBlock({title}){
+    const [page, setPage] = useState(1);
+    const [volume, setVolume] = useState(1);
+    const [chapter, setChapter] = useState(1);
 
-        </div>
-    )
-}
+    const staticPath = "../../storage/template/volume1/chapter1"
+    const path = `Reading in ../../storage/${title}/volume${volume}/chapter${chapter}/${page}.png`;
 
-function ReadBlock({readItem}){
+
     return(
-        <div className="read-block">
+        <div className="read-block" >            
             <div className="read-content">
-                This is read block
+                <div className="read-navigate">
+                    <button>Artqa</button>
+                    <p>{`${title} Tom ${volume} Tarau ${chapter}`}</p>
+                    <button>Alğa</button>
+
+                </div>
+                <div className="read-page">
+                    <img src={image} alt="Page?" />
+                </div>
             </div>
             <div className="read-footer">
                 <button>Artqa</button>

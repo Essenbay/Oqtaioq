@@ -8,10 +8,10 @@ function Page(){
   const items = [
     {
       id: 0,
-      title: "template"
+      title: 'template'
     }
   ]
-  const [readItem, setReadItem] = useState({item: "1", volume: 0, chapter: 0});
+  const [readItem, setReadItem] = useState({item: items.at(0), volume: 0, chapter: 0});
   const [listActive, setListActive] = useState(false);
 
   function handleToRead(itemId, volume, chapter){
@@ -35,7 +35,7 @@ function Page(){
       </div>
       <ListBlock active={listActive}/>
       {
-        readItem.item == "" ? <EmptyReadBlock /> : <ReadBlock />
+        readItem.item == "" ? <EmptyReadBlock /> : <ReadBlock title={readItem.item.title}/>
       }
     </div>
   )
