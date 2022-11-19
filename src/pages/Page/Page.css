@@ -1,0 +1,13 @@
+.main-page{
+    width: 100%;
+    height: 100vh;
+    background-color: #212325;
+}
+
+.header{
+    height: 8%;
+    display:  flex;
+    align-items: center;
+    justify-content: space-between;
+}
+

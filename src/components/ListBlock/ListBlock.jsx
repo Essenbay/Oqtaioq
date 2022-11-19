@@ -1,12 +1,11 @@
 import React, {useState} from 'react';
 import './ListBlock.css'
 
-function ListBlock(){
+function ListBlock({active}){
 
     return(
-        <div className="listblock">
-            <h2 className='listblock-header'>Katalog</h2>
-            {/* Search bar? */}
+        <div className={active ? "list-block list-block-active" : "list-block"}>
+            This is list block
             {/* List of items */}
         </div>
     )

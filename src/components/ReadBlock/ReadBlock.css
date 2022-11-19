@@ -1,0 +1,40 @@
+.read-block{
+    width: 100%;
+    height: fit-content;
+    background-color: #3D4244;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.read-content{
+    margin: 1em;
+    width: 80%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.read-navigate{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.read-page{
+    margin: 1em;
+}
+
+.read-page img{
+    height: 80vh;
+}
+
+.read-footer{
+    width: 100vw;
+    height: 8vh;
+    display:  flex;
+    align-items: center;
+    align-self: flex-end;
+    background-color: #212325;
+    justify-content: center;
+}
