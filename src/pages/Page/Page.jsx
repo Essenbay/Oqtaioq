@@ -2,9 +2,8 @@ import './Page.css';
 import React, {useState} from 'react';
 import ListBlock from '../../components/ListBlock/ListBlock';
 import ReadBlock from '../../components/ReadBlock/ReadBlock';
+import EmptyReadBlock from '../../components/ReadBlock/EmptyReadBlock';
 import logo from '../../images/logo.svg'
-import menu from '../../images/menu.svg'
-import EmptyReadBlock from '../../components/EmptyReadBlock/EmptyReadBlock';
 function Page(){
   const items = [
     {
@@ -12,7 +11,7 @@ function Page(){
       title: "template"
     }
   ]
-  const [readItem, setReadItem] = useState({item: "", volume: 0, chapter: 0});
+  const [readItem, setReadItem] = useState({item: "1", volume: 0, chapter: 0});
   const [listActive, setListActive] = useState(false);
 
   function handleToRead(itemId, volume, chapter){
@@ -31,7 +30,7 @@ function Page(){
       <div className="header">
         <div className="logo"><img src={logo} alt="logo" /></div>
         <div className="menu-items" onClick={() => {setListActive(!listActive)}}>
-          <img src={menu} alt="menu" />
+          <button>Menu</button>
         </div>
       </div>
       <ListBlock active={listActive}/>

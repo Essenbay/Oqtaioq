@@ -1,9 +1,25 @@
 .read-block{
-    width: 100vw;
-    height: max-content;
-    min-height: 10rem;
+    width: 100%;
+    height: 92%;
+    background-color: #3D4244;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
 
+.read-content{
+    border: solid red 1px;
+
+    width: 80%;
+
+}
+
+.read-footer{
+    width: 100vw;
+    height: 8%;
+    display:  flex;
+    align-items: center;
+    align-self: flex-end;
     background-color: #212325;
-    border-radius: 1em;
-    padding: 0 1.5em;
+    justify-content: center;
 }

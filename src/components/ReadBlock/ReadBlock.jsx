@@ -11,7 +11,14 @@ function readEmpty(){
 function ReadBlock({readItem}){
     return(
         <div className="read-block">
-            This is read block
+            <div className="read-content">
+                This is read block
+            </div>
+            <div className="read-footer">
+                <button>Artqa</button>
+                Bet
+                <button>Alğa</button>
+            </div>
         </div>
     )
 }
