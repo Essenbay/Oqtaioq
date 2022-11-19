@@ -5,7 +5,8 @@ function ListBlock({active}){
 
     return(
         <div className={active ? "list-block list-block-active" : "list-block"}>
-            <h2 className='listblock-header'>Katalog</h2>
+            {console.log(`Lisk Block ${active}`)}
+            This is list block
             {/* List of items */}
         </div>
     )

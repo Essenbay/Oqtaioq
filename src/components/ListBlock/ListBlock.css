@@ -1,15 +1,14 @@
-.listblock{
+.list-block{
     width: 80%;
     height: max-content;
     min-height: 10rem;
 
-    background-color: #212325;
     border-radius: 1em;
     padding: 0 1.5em;
-    transform: scale(0);
+    display: none;
 }
 
 .list-block-active{
-    transform: scale(1);
+    display: flex;
 
 }

@@ -1,0 +1,9 @@
+.read-block{
+    width: 100vw;
+    height: max-content;
+    min-height: 10rem;
+
+    background-color: #212325;
+    border-radius: 1em;
+    padding: 0 1.5em;
+}
