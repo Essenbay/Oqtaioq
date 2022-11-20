@@ -14,22 +14,7 @@ function ReadBlock({title, toEmpty}){
     const pageLen = Object.keys(items[title][`volume${volume}`][`chapter${chapter}`]).length;
     const prevPage = () => {
         if(page == 1){
-            if(chapter == 1){
-                if(volume == 1){
-                    console.log("To empty")
-                    toEmpty();
-                } else {
-                    console.log("To prev volume");
-                    setVolume(volume - 1);
-                    setChapter(chapterLen);
-                    setPage(pageLen);
-                }
-            }
-            else{
-                console.log("To prev chapter");
-                setChapter(chapter - 1);
-                setPage(pageLen);
-            }
+            prevChapter();
         } else{
             setPage(page - 1);
         }
@@ -37,35 +22,53 @@ function ReadBlock({title, toEmpty}){
     }
     const nextPage = () => {
         if(page == pageLen){
-            if(chapter == chapterLen){
-                if(volume == volumeLen){
-                    toEmpty();
-                    console.log("To empty")
-                } else {
-                    console.log("To next volume");
-                    setVolume(volume + 1);
-                    setChapter(1);
-                    setPage(1);
-                }
-            }
-            else{
-                console.log("To next chapter");
-                setChapter(chapter + 1);
-                setPage(1);
-
-            }
+            nextChapter()
         } else{
             setPage(page + 1);
         }
+    }
+    const prevChapter = () => {
+        if(chapter == 1){
+            if(volume == 1){
+                window.location.reload();
+            } else {
+                console.log("To prev volume");
+                setVolume(volume - 1);
+                setChapter(chapterLen);
+                setPage(pageLen);
+            }
+        }
+        else{
+            console.log("To prev chapter");
+            setChapter(chapter - 1);
+            setPage(pageLen);
+        }
+    }
+    const nextChapter = () => {
+        if(chapter == chapterLen){
+            if(volume == volumeLen){
+                window.location.reload();
+            } else {
+                console.log("To next volume");
+                setVolume(volume + 1);
+                setChapter(1);
+                setPage(1);
+            }
+        }
+        else{
+            console.log("To next chapter");
+            setChapter(chapter + 1);
+            setPage(1);
 
+        }
     }
     return(
         <div className="read-block" >
             <div className="read-content">
                 <div className="read-navigate">
-                    <button>Artqa</button>
+                    <button onClick={prevChapter}>Artqa</button>
                     <p>{`${title} Tom ${volume} Tarau ${chapter}`}</p>
-                    <button>Alğa</button>
+                    <button onClick={nextChapter}>Alğa</button>
 
                 </div>
                 <div className="read-page">

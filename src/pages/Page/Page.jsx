@@ -10,12 +10,17 @@ function Page(){
     {
       id: 0,
       title: 'template'
+    },
+    {
+      id: 1,
+      title: 'template2'
     }
   ]
-  const [readItem, setReadItem] = useState({item: items.at(0), volume: 0, chapter: 0});
-  const [listActive, setListActive] = useState(false);
+  const [readItem, setReadItem] = useState({item: "", volume: 0, chapter: 0});
+  const [listActive, setListActive] = useState(true);
 
   function handleToRead(itemId, volume, chapter){
+    console.log(`Reading title:${items.at(itemId).title} volume: ${volume} chapter:${chapter}`)
     if(itemId >= 0 && itemId < items.length && volume > 0 && chapter > 0){
       setReadItem(prev => ({...prev, 
         item: items.at(itemId),
@@ -23,11 +28,11 @@ function Page(){
         chapter: chapter
       }))
     }
-    console.log(`Reading ${readItem.item} ${readItem.volume} ${readItem.chapter}`)
   }
 
   function handleToEmpty(){
-    setReadItem(readItem.item = "");
+    setReadItem(readItem.item = "", readItem.chapter = 0, readItem.volume = 0);
+
   }
 
   return(
