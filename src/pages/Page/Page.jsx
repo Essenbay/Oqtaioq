@@ -4,6 +4,7 @@ import ListBlock from '../../components/ListBlock/ListBlock';
 import ReadBlock from '../../components/ReadBlock/ReadBlock';
 import EmptyReadBlock from '../../components/ReadBlock/EmptyReadBlock';
 import logo from '../../images/logo.svg'
+import { setItem } from 'localforage';
 function Page(){
   const items = [
     {
@@ -25,6 +26,10 @@ function Page(){
     console.log(`Reading ${readItem.item} ${readItem.volume} ${readItem.chapter}`)
   }
 
+  function handleToEmpty(){
+    setReadItem(readItem.item = "");
+  }
+
   return(
     <div className="main-page">
       <div className="header">
@@ -33,9 +38,9 @@ function Page(){
           <button>Menu</button>
         </div>
       </div>
-      <ListBlock active={listActive}/>
+      <ListBlock active={listActive} toRead={handleToRead}/>
       {
-        readItem.item == "" ? <EmptyReadBlock /> : <ReadBlock title={readItem.item.title}/>
+        readItem.item == "" ? <EmptyReadBlock /> : <ReadBlock title={readItem.item.title} toEmpty={handleToEmpty}/>
       }
     </div>
   )

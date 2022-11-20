@@ -1,11 +1,12 @@
 import React, {useState} from 'react';
 import './ListBlock.css'
 
-function ListBlock({active}){
+function ListBlock({active, toRead}){
 
     return(
         <div className={active ? "list-block list-block-active" : "list-block"}>
             This is list block
+            <button onClick={()=>{toRead(0,1,1)}}>Read "Template"</button>
             {/* List of items */}
         </div>
     )

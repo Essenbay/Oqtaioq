@@ -2,7 +2,7 @@ import './ReadBlock.css';
 import React, {useState} from 'react';
 import items from '../../storage/storage';
 import image from '../../storage/template/volume1/chapter1/1.png'
-function ReadBlock({title}){
+function ReadBlock({title, toEmpty}){
     const [page, setPage] = useState(1);
     const [volume, setVolume] = useState(1);
     const [chapter, setChapter] = useState(1);
@@ -17,6 +17,7 @@ function ReadBlock({title}){
             if(chapter == 1){
                 if(volume == 1){
                     console.log("To empty")
+                    toEmpty();
                 } else {
                     console.log("To prev volume");
                     setVolume(volume - 1);
@@ -38,6 +39,7 @@ function ReadBlock({title}){
         if(page == pageLen){
             if(chapter == chapterLen){
                 if(volume == volumeLen){
+                    toEmpty();
                     console.log("To empty")
                 } else {
                     console.log("To next volume");
