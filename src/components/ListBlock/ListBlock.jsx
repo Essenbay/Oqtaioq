@@ -2,7 +2,6 @@ import React, {useState} from 'react';
 import './ListBlock.css'
 
 function ListBlock({active, toRead, items}){
-
     return(
         <div className={active ? "list-block list-block-active" : "list-block"}>
             <img src={items[0].image} alt="" />
