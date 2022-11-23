@@ -1,6 +1,9 @@
 import './ReadBlock.css';
 import React, {useState} from 'react';
 import storage from '../../storage/storage';
+import next from '../../images/next.svg';
+import back from '../../images/back.svg'
+
 function ReadBlock({title, toEmpty}){
     const [page, setPage] = useState(1);
     const [volume, setVolume] = useState(1);
@@ -65,9 +68,9 @@ function ReadBlock({title, toEmpty}){
         <div className="read-block" >
             <div className="read-content">
                 <div className="read-navigate">
-                    <button onClick={prevChapter}>Artqa</button>
+                    <img src={back} onClick={prevChapter} className="imageBack" />
                     <p>{`${title} Tom ${volume} Tarau ${chapter}`}</p>
-                    <button onClick={nextChapter}>Alğa</button>
+                    <img src={next} onClick={prevChapter} className="imageNext" />
 
                 </div>
                 <div className="read-page">
@@ -75,9 +78,9 @@ function ReadBlock({title, toEmpty}){
                 </div>
             </div>
             <div className="read-footer">
-                <button onClick={prevPage}>Artqa</button>
+                <img src={back} onClick={prevPage} className="imageBack" />
                 Bet {page} / {pageLen}
-                <button onClick={nextPage}>Alğa</button>
+                <img src={next} onClick={nextPage} className="imageNext" />
             </div>
         </div>
     )

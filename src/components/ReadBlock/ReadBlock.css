@@ -38,3 +38,11 @@
     background-color: #212325;
     justify-content: center;
 }
+
+.imageBack {
+    margin-right: 10px;
+}
+
+.imageNext {
+    margin-left: 10px;
+}

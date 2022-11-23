@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
 import './ListBlock.css'
-import image12 from '../Rectangle_1.png'
 
 function ListBlock({active, toRead, items}){
 
     return(
         <div className={active ? "list-block list-block-active" : "list-block"}>
-            <img src={items[0].image} alt="" />
-            <button onClick={()=>{toRead(0,1,1)}}>Read "Template"</button>
+            <img src={items[0].image} alt="" className='imagePreview' onClick={()=>{toRead(0,1,1)}} />
+            {/* <button onClick={()=>{toRead(0,1,1)}}>Read "Template"</button> */}
             {/* List of items */}
         </div>
     )

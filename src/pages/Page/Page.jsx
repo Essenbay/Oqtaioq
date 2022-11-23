@@ -5,6 +5,7 @@ import ReadBlock from '../../components/ReadBlock/ReadBlock';
 import EmptyReadBlock from '../../components/ReadBlock/EmptyReadBlock';
 import logo from '../../images/logo.svg'
 import storage from '../../storage/storage';
+import menu from '../../images/menu.svg'
 function Page(){
   const items = [
     {
@@ -41,9 +42,7 @@ function Page(){
     <div className="main-page">
       <div className="header">
         <div className="logo"><img src={logo} alt="logo" /></div>
-        <div className="menu-items" onClick={() => {setListActive(!listActive)}}>
-          <button>Menu</button>
-        </div>
+          <img src={menu} onClick={() => {setListActive(!listActive)}} className="imageMenu" />
       </div>
       <ListBlock active={listActive} toRead={handleToRead} items={items}/>
       {
