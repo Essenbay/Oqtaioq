@@ -1,5 +1,5 @@
 
-const items = {
+const storage = {
     template: {
         volume1: {
             chapter1:{
@@ -22,7 +22,14 @@ const items = {
                 page3: require('./template2/volume1/chapter1/3.png')
             }
         }
+    },
+    preview: {
+        1: require('./preview/template.png'),
+        2: require('./preview/template2.png')
     }
 }
 
-export default items;
+
+
+
+export default storage;

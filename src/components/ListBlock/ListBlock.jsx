@@ -1,11 +1,11 @@
 import React, {useState} from 'react';
 import './ListBlock.css'
 
-function ListBlock({active, toRead}){
+function ListBlock({active, toRead, items}){
 
     return(
         <div className={active ? "list-block list-block-active" : "list-block"}>
-            This is list block
+            <img src={items[0].image} alt="" />
             <button onClick={()=>{toRead(0,1,1)}}>Read "Template"</button>
             {/* List of items */}
         </div>

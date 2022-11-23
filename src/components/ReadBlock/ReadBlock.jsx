@@ -1,6 +1,6 @@
 import './ReadBlock.css';
 import React, {useState} from 'react';
-import items from '../../storage/storage';
+import storage from '../../storage/storage';
 import image from '../../storage/template/volume1/chapter1/1.png'
 function ReadBlock({title, toEmpty}){
     const [page, setPage] = useState(1);
@@ -8,10 +8,10 @@ function ReadBlock({title, toEmpty}){
     const [chapter, setChapter] = useState(1);
 
     const pageName = `volume${volume}_chapter${chapter}_page${page}`
-    const currPageImg = items[title][`volume${volume}`][`chapter${chapter}`][`page${page}`];
-    const volumeLen = Object.keys(items[title]).length
-    const chapterLen = Object.keys(items[title][`volume${volume}`]).length;
-    const pageLen = Object.keys(items[title][`volume${volume}`][`chapter${chapter}`]).length;
+    const currPageImg = storage[title][`volume${volume}`][`chapter${chapter}`][`page${page}`];
+    const volumeLen = Object.keys(storage[title]).length
+    const chapterLen = Object.keys(storage[title][`volume${volume}`]).length;
+    const pageLen = Object.keys(storage[title][`volume${volume}`][`chapter${chapter}`]).length;
     const prevPage = () => {
         if(page == 1){
             prevChapter();
