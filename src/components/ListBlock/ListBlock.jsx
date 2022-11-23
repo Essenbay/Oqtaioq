@@ -7,7 +7,7 @@ function ListBlock({active, toRead, items}){
         <div className={active ? "list-block list-block-active" : "list-block"}>
 
             <ListItem item={items[0]} toRead={toRead} /> 
-            <ListItem item={items[1]} toRead={toRead} /> 
+            <ListItem item={items[1]} toRead={toRead} />  
         </div>
     )
 }

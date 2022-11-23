@@ -1,0 +1,9 @@
+.imagePreview {
+    border-radius: 10px;
+    width: 200px;
+    height: 275px;
+}
+.listItem {
+    margin-left: 20px;
+    margin-bottom: 20px;
+}

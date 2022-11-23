@@ -3,24 +3,17 @@
     height: max-content;
     min-height: 10rem;
     display: none;
+    margin-left: 75px;
 }
 
 .list-block-active{
     display: flex;
 }
 
-.imagePreview {
-    margin-left: 30px;
-    border-radius: 10px;
-    width: 175px;
-    height: 250px;
-    margin-bottom: 20px;
-}
-
 .list-item{
     background-color: rgba(black, 0.5);
     width: 22%;
-    text-align: center;
+    /* text-align: center; */
 }
 
 /*.description{
