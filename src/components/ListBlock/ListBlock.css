@@ -9,3 +9,17 @@
     display: flex;
 
 }
+
+.list-item{
+    background-color: rgba(black, 0.5);
+    width: 22%;
+    text-align: center;
+}
+
+/*.description{
+    width: 18%;
+    top: 46%;
+    background: rgba(205, 214, 219, 0.3);
+    text-align: center;
+    position: absolute;
+}*/
