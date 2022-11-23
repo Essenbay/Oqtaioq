@@ -4,7 +4,7 @@ import storage from '../../storage/storage';
 import next from '../../images/next.svg';
 import back from '../../images/back.svg'
 
-function ReadBlock({title, toEmpty}){
+function ReadBlock({title, toEmpty, comments}){
     const [page, setPage] = useState(1);
     const [volume, setVolume] = useState(1);
     const [chapter, setChapter] = useState(1);
@@ -81,6 +81,9 @@ function ReadBlock({title, toEmpty}){
                 <img src={back} onClick={prevPage} className="imageBack" />
                 Bet {page} / {pageLen}
                 <img src={next} onClick={nextPage} className="imageNext" />
+            </div>
+            <div className="comment-section">
+                {console.log(comments[0].username)}
             </div>
         </div>
     )

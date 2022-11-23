@@ -11,7 +11,15 @@ function Page(){
     {
       id: 0,
       title: 'template',
-      image: storage.preview[1]
+      image: storage.preview[1],
+      comments: [{
+        username: "Usename",
+        content: "This is comment"
+      },
+      {
+        username: "Usename",
+        content: "This is comment"
+      }]
     },
     {
       id: 1,
@@ -28,7 +36,7 @@ function Page(){
       setReadItem(prev => ({...prev, 
         item: items.at(itemId),
         volume: volume, 
-        chapter: chapter
+        chapter: chapter,
       }))
     }
   }
@@ -46,7 +54,7 @@ function Page(){
       </div>
       <ListBlock active={listActive} toRead={handleToRead} items={items}/>
       {
-        readItem.item == "" ? <EmptyReadBlock /> : <ReadBlock title={readItem.item.title} toEmpty={handleToEmpty}/>
+        readItem.item == "" ? <EmptyReadBlock /> : <ReadBlock title={readItem.item.title} toEmpty={handleToEmpty} comments={readItem.item.comments}/>
       }
     </div>
   )
