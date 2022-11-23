@@ -1,7 +1,6 @@
 import './ReadBlock.css';
 import React, {useState} from 'react';
 import storage from '../../storage/storage';
-import image from '../../storage/template/volume1/chapter1/1.png'
 function ReadBlock({title, toEmpty}){
     const [page, setPage] = useState(1);
     const [volume, setVolume] = useState(1);
