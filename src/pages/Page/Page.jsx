@@ -4,7 +4,6 @@ import ListBlock from '../../components/ListBlock/ListBlock';
 import ReadBlock from '../../components/ReadBlock/ReadBlock';
 import EmptyReadBlock from '../../components/ReadBlock/EmptyReadBlock';
 import logo from '../../images/logo.svg'
-import { setItem } from 'localforage';
 function Page(){
   const items = [
     {
