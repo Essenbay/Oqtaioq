@@ -4,16 +4,18 @@ import ListBlock from '../../components/ListBlock/ListBlock';
 import ReadBlock from '../../components/ReadBlock/ReadBlock';
 import EmptyReadBlock from '../../components/ReadBlock/EmptyReadBlock';
 import logo from '../../images/logo.svg'
-
+import storage from '../../storage/storage';
 function Page(){
   const items = [
     {
       id: 0,
-      title: 'template'
+      title: 'template',
+      image: storage.preview[1]
     },
     {
       id: 1,
-      title: 'template2'
+      title: 'template2',
+      image: storage.preview[2]
     }
   ]
   const [readItem, setReadItem] = useState({item: "", volume: 0, chapter: 0});
@@ -43,7 +45,7 @@ function Page(){
           <button>Menu</button>
         </div>
       </div>
-      <ListBlock active={listActive} toRead={handleToRead}/>
+      <ListBlock active={listActive} toRead={handleToRead} items={items}/>
       {
         readItem.item == "" ? <EmptyReadBlock /> : <ReadBlock title={readItem.item.title} toEmpty={handleToEmpty}/>
       }
