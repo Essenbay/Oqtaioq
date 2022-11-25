@@ -15,21 +15,31 @@ function Login({active, setActive, setUser}){
             setUser(usernameInput)
             setUsernameInput('')
             setActive(false);
+            setWrongState(false);
+            setNullState(false);
         }
         else if(usernameInput == "" && passwordInput == ""){
             console.log("Enter username and password!")
+            setNullState(true);
+            setWrongState(false);
         }
         else{
             console.log("Wrong username or password")
-            //error
+            setWrongState(true);
         }
         setPasswordInput('');
+        
     }
     const handleCancel = () => {
         setUsernameInput("");
         setPasswordInput("");
+        setWrongState(false);
+        setNullState(false);
         setActive(false);
     }
+    const [wrongState, setWrongState] = useState(false);
+    const [nullState, setNullState] = useState(false);
+
     return(
         <div className={active ? "login-modal active" : "login-modal"} onClick={()=>setActive(false)}>
             <form className="login-modal-content" onClick={e => e.stopPropagation()} onSubmit={handleSubmit}>
@@ -38,15 +48,21 @@ function Login({active, setActive, setUser}){
                 </div>
                 <div className='login-form' action="" >
                     <label htmlFor="usernameInput">Username</label>
-                    <input type="text" id="usernameInput" value={usernameInput} onChange={handleChangeUsername} placeholder="Enter your username"/>
+                    <input type="text" id="usernameInput" className={nullState ? 'login-form-username-input null' : 'login-form-username-input'} value={usernameInput} onChange={handleChangeUsername} placeholder="Enter your username"/>
                     <label htmlFor="passwordInput">Password</label>
-                    <input type="password" id="passwordInput" value={passwordInput} onChange={handleChangePassword} placeholder="Enter your password"/>
+                    <input type="password" id="passwordInput" className={nullState ? 'login-form-password-input null' : 'login-form-password-input'} value={passwordInput} onChange={handleChangePassword} placeholder="Enter your password"/>
 
                 </div>
-                <div className="login-button-group">
-                    <input className='login-cancel' type="button" value="Cancel" onClick={handleCancel}></input>
-                    <input className='login-submit' type="submit" value="Log In"></input>
+                <div className="login-footer">
+                    <div className="login-button-group">
+                        <input className='login-cancel' type="button" value="Cancel" onClick={handleCancel}></input>
+                        <input className='login-submit' type="submit" value="Log In"></input>
+                    </div>
+                    <div className={wrongState ? "login-wrong-state active" : "login-wrong-state"}>
+                        Wrong username or password
+                    </div>
                 </div>
+                
             </form>
         </div>
     )

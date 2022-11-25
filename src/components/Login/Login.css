@@ -43,7 +43,7 @@
     font-size: 1.5em;
 }
 
-.login-form input{
+.login-form-username-input, .login-form-password-input{
     color: white;
     font-size: 0.8em;
     outline: none;
@@ -54,9 +54,29 @@
     overflow: hidden;
 }
 
+.login-form-username-input.null::placeholder, .login-form-password-input.null::placeholder{
+    color: rgb(204, 58, 58);
+}
+
 .login-form input::placeholder{
     font-size: 0.8em;
     color: #AFAFAF;
+}
+
+.login-footer{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: row-reverse;
+}
+
+.login-wrong-state{
+    color: rgb(204, 58, 58);
+    display: none;
+}
+.login-wrong-state.active{
+    display: block;
 }
 
 .login-button-group{
