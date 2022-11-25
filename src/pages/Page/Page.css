@@ -10,12 +10,9 @@
     align-items: center;
     justify-content: space-between;
     margin-bottom: 10px;
+    padding: 0 20px;
 }
 
-.imageMenu {
-    margin-right: 20px;
-}
-
-.logo {
-    margin-left: 25px;
+.header-button-group img{
+    margin-left: 15px;
 }
