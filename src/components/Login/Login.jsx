@@ -1,5 +1,6 @@
 import './Login.css';
 import React, {useState} from 'react';
+import { checkPassword } from '../../storage/users/users';
 function Login({active, setActive, setUser}){
     const [usernameInput, setUsernameInput] = useState('');
     const [passwordInput, setPasswordInput] = useState('');
@@ -11,14 +12,14 @@ function Login({active, setActive, setUser}){
     }
     const handleSubmit = (e) =>{
         e.preventDefault();
-        if(passwordInput){
+        if(checkPassword(usernameInput, passwordInput)){
             setUser(usernameInput)
             setUsernameInput('')
             setActive(false);
             setWrongState(false);
             setNullState(false);
         }
-        else if(usernameInput == "" && passwordInput == ""){
+        else if(usernameInput == "" || passwordInput == ""){
             console.log("Enter username and password!")
             setNullState(true);
             setWrongState(false);

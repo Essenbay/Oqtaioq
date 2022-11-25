@@ -1,22 +1,13 @@
-const userBase = new Set();
-const checkPassword = () => {
+const userBase = new Map();
+const checkPassword = (username, password) => {
+    if(userBase.get(username) == password) return true;
+    else return false;
+}
 
-}
-const getUser = (username, password) => {
-    for (const elem of userBase) {
-        if (elem.username === username && elem.password === password) {
-          return true
-        }
-    }
-    return false;
-      
-}
 const addUser = (username, password) => {
-    userBase.add({
-        username: username,
-        password: password
-    })
+    userBase.set(username, password);
 }
+
 addUser('admin', 'admin');
 
-export {getUser, addUser}
+export {checkPassword, addUser}
