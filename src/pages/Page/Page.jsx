@@ -22,7 +22,7 @@ function Page(){
       },
       {
         username: "Usename",
-        content: "This is comment"
+        content: "This comment"
       }]
     },
     {
