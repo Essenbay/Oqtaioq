@@ -8,6 +8,7 @@ import storage from '../../storage/storage';
 import menu from '../../images/menu.svg'
 import exit from '../../images/exit.svg'
 import Login from '../../components/Login/Login';
+import CommentBlock from '../../components/CommentBlock/CommentBlock';
 function Page(){
   const [user, setUser] = useState(null);
   const [loginActive, setLoginActive] = useState(false);
@@ -16,14 +17,6 @@ function Page(){
       id: 0,
       title: 'template',
       image: storage.preview[1],
-      comments: [{
-        username: "Usename",
-        content: "This is comment"
-      },
-      {
-        username: "Usename",
-        content: "This is comment"
-      }]
     },
     {
       id: 1,
@@ -47,20 +40,24 @@ function Page(){
 
   function handleToEmpty(){
     setReadItem(readItem.item = "", readItem.chapter = 0, readItem.volume = 0);
-
   }
+
+  
+
   return(
     <div className="main-page">
       <div className="header">
         <div className="logo"><img src={logo} alt="logo" /></div>
+
         <div className="header-button-group">
           <img src={menu} onClick={() => {setListActive(!listActive)}} className="imageMenu" />
           <img src={exit} alt="Logout" onClick={() => {setLoginActive(true)}}/>
         </div>
+
       </div>
       <ListBlock active={listActive} toRead={handleToRead} items={items}/>
       {
-        readItem.item == "" ? <EmptyReadBlock /> : <ReadBlock title={readItem.item.title} toEmpty={handleToEmpty} comments={readItem.item.comments}/>
+        readItem.item == "" ? <EmptyReadBlock /> : <ReadBlock title={readItem.item.title} toEmpty={handleToEmpty}/>
       }
 
       <Login active={loginActive} setActive={setLoginActive} setUser={setUser} />

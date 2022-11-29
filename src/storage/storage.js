@@ -1,4 +1,3 @@
-
 const storage = {
     template: {
         volume1: {
@@ -28,8 +27,5 @@ const storage = {
         2: require('./preview/template2.png')
     }
 }
-
-
-
 
 export default storage;
