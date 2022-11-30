@@ -1,6 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Reem+Kufi+Fun:wght@400;500;600;700&display=swap');
 body {
   margin: 0;
+  padding: 0;
   font-family: 'Reem Kufi Fun', sans-serif;
   color: #ffff;
   -webkit-font-smoothing: antialiased;
@@ -8,6 +9,11 @@ body {
 }
 
 code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
+
+codes {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }

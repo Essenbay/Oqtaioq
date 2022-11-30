@@ -1,13 +1,12 @@
 import React, {useState} from 'react';
+import ListItem from '../ListItem/ListItem';
 import './ListBlock.css'
 
-function ListBlock(){
-
+function ListBlock({active, toRead, items}){
     return(
-        <div className="listblock">
-            <h2 className='listblock-header'>Katalog</h2>
-            {/* Search bar? */}
-            {/* List of items */}
+        <div className={active ? "list-block list-block-active" : "list-block"}>
+            <ListItem item={items[0]} toRead={toRead} /> 
+            <ListItem item={items[1]} toRead={toRead} />  
         </div>
     )
 }

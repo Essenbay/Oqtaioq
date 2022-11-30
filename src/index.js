@@ -2,27 +2,12 @@ import React from 'react';
 import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
-import ListPage from './pages/ListPage/ListPage';
-import ReadPage from './components/ReadPage/ReadPage';
+import Page from './pages/Page/Page';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-let Page;
-switch(window.location.pathname) {
-  case "/":
-    Page = ListPage; break;
-  case "/read":
-    Page = ReadPage; break;
-  default: 
-    Page = ListPage; break;
-}
-
-const openItem = (itemId)=>{
-  console.log(`Reading ${itemId}`)
-}
-
 root.render(
   <React.StrictMode>
-    <Page openItem={openItem}/>
+    <Page />
   </React.StrictMode>
 );
 

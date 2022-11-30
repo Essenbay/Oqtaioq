@@ -1,13 +1,11 @@
-.listblock{
+.list-block{
     width: 80%;
     height: max-content;
     min-height: 10rem;
-
-    background-color: #212325;
-    border-radius: 1em;
-    padding: 0 1.5em;
+    display: none;
+    margin-left: 75px;
 }
 
-.listblock-header{
-    
+.list-block-active{
+    display: flex;
 }
