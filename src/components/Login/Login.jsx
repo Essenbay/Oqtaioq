@@ -20,12 +20,10 @@ function Login({active, setActive, setUser}){
             setNullState(false);
         }
         else if(usernameInput == "" || passwordInput == ""){
-            console.log("Enter username and password!")
             setNullState(true);
             setWrongState(false);
         }
         else{
-            console.log("Wrong username or password")
             setWrongState(true);
         }
         setPasswordInput('');
