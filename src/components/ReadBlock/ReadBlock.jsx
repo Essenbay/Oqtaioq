@@ -3,8 +3,9 @@ import React, {useState} from 'react';
 import storage from '../../storage/storage';
 import next from '../../images/next.svg';
 import back from '../../images/back.svg'
+import CommentBlock from '../CommentBlock/CommentBlock';
 
-function ReadBlock({title, toEmpty, comments}){
+function ReadBlock({title, toEmpty}){
     const [page, setPage] = useState(1);
     const [volume, setVolume] = useState(1);
     const [chapter, setChapter] = useState(1);
@@ -71,7 +72,6 @@ function ReadBlock({title, toEmpty, comments}){
                     <img src={back} onClick={prevChapter} className="imageBack" />
                     <p>{`${title} Tom ${volume} Tarau ${chapter}`}</p>
                     <img src={next} onClick={prevChapter} className="imageNext" />
-
                 </div>
                 <div className="read-page">
                     <img src={currPageImg} alt="Page?" />
@@ -82,9 +82,7 @@ function ReadBlock({title, toEmpty, comments}){
                 Bet {page} / {pageLen}
                 <img src={next} onClick={nextPage} className="imageNext" />
             </div>
-            <div className="comment-section">
-                {console.log(comments[0].username)}
-            </div>
+            <CommentBlock />
         </div>
     )
 }
