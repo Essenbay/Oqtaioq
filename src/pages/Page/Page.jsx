@@ -1,6 +1,6 @@
 import "./Page.css";
 import React, { useEffect, useState } from "react";
-import ListBlock from "../../components/ListCatalog/ListCatalog";
+import ListCatalog from "../../components/ListCatalog/ListCatalog";
 import ReadBlock from "../../components/ReadBlock/ReadBlock";
 import EmptyReadBlock from "../../components/ReadBlock/EmptyReadBlock";
 import logo from "../../images/logo.svg";
@@ -27,13 +27,13 @@ function Page() {
       id: 0,
       title: "template",
       image: storage.preview[1],
-      catalog: "Shaikas",
+      genre: "Shaikas",
     },
     {
       id: 1,
       title: "template2",
       image: storage.preview[2],
-      catalog: "Kundelikti",
+      genre: "Kundelikti",
     },
   ];
   const filteredItem = items;
@@ -91,7 +91,7 @@ function Page() {
         </div>
       </div>
 
-      <ListBlock active={listActive} toRead={handleToRead} items={items} />
+      <ListCatalog active={listActive} toRead={handleToRead} items={items} />
       {readItem.item == "" ? (
         <EmptyReadBlock />
       ) : (

@@ -1,9 +1,10 @@
 import React, { useState } from "react";
+import { useEffect } from "react";
 import ListItem from "../ListItem/ListItem";
 import "./ListCatalog.css";
 
-function ListBlock({ active, toRead, items, filter }) {
-  let curCatalog = "All";
+function ListCatalog({ active, toRead, items }) {
+  const [showedItems, setShowedItems] = useState(items);
   const catalogs = [
     {
       title: "All",
@@ -16,43 +17,33 @@ function ListBlock({ active, toRead, items, filter }) {
     },
   ];
 
-  function filterCatalog(catalogTitle) {
-    curCatalog = catalogTitle;
+  function filterItems(genre) {
+    setShowedItems(
+      items.filter((item) => item.genre == genre || genre == "All")
+    );
   }
 
-  function localFilter(item) {
-    if (curCatalog == "All") {
-      console.log("true");
+  useEffect(() => {
+    console.log(items);
+  }, []);
 
-      return true;
-    } else if (curCatalog == item.catalog) {
-      console.log("true");
-      return true;
-    } else {
-      console.log("false");
-
-      return false;
-    }
-  }
-
-  function showFilterCatalog() {}
+  useEffect(() => {
+    console.log(showedItems);
+  }, [showedItems]);
 
   return (
     <div className={active ? "list-block list-block-active" : "list-block"}>
-      {catalogs.map((catalog) => {
+      {catalogs.map((genre) => {
         return (
-          <button
-            className="catlog"
-            onClick={() => filterCatalog(catalog.title)}
-          >
-            {catalog.title}
+          <button className="catlog" onClick={() => filterItems(genre.title)}>
+            {genre.title}
           </button>
         );
       })}
-      {items.filter(localFilter).map((item) => {
+      {showedItems.map((item) => {
         return <ListItem item={item} toRead={toRead} />;
       })}
     </div>
   );
 }
-export default ListBlock;
+export default ListCatalog;
