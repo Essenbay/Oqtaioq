@@ -1,6 +1,6 @@
 import "./Page.css";
 import React, { useEffect, useState } from "react";
-import ListBlock from "../../components/ListBlock/ListBlock";
+import ListCatalog from "../../components/ListCatalog/ListCatalog";
 import ReadBlock from "../../components/ReadBlock/ReadBlock";
 import EmptyReadBlock from "../../components/ReadBlock/EmptyReadBlock";
 import logo from "../../images/logo.svg";
@@ -27,13 +27,16 @@ function Page() {
       id: 0,
       title: "template",
       image: storage.preview[1],
+      genre: "Shaikas",
     },
     {
       id: 1,
       title: "template2",
       image: storage.preview[2],
+      genre: "Kundelikti",
     },
   ];
+  const filteredItem = items;
   const [readItem, setReadItem] = useState({ item: "", volume: 0, chapter: 0 });
   const [listActive, setListActive] = useState(true);
 
@@ -84,15 +87,11 @@ function Page() {
 
           <span>{user}</span>
 
-          <img
-            src={exit}
-            alt="Logout"
-            onClick={handleLogout}
-          />
+          <img src={exit} alt="Logout" onClick={handleLogout} />
         </div>
       </div>
 
-      <ListBlock active={listActive} toRead={handleToRead} items={items} />
+      <ListCatalog active={listActive} toRead={handleToRead} items={items} />
       {readItem.item == "" ? (
         <EmptyReadBlock />
       ) : (
